@@ -15,7 +15,7 @@ body {
 }
 
 p, h2, h3, li {
-	color: rgb(230, 230, 253);
+	color: rgb(227, 227, 227);
 
 	padding-left: 12px;
 	padding-right: 12px;
@@ -118,4 +118,5 @@ table {
 	.hide-on-mobile {
 		display: none;
 	}
+
 }
