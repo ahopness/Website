@@ -25,3 +25,5 @@ project/
 
 - [ ] Change template engine to Jinja.
 - [ ] Add custom page titles.
+- [ ] Add UV package manager.
+
