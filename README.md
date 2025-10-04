@@ -20,3 +20,8 @@ project/
 
 - Python 3.6 or higher
   - `pip install watchdog` to run server.py.
+
+## To Do
+
+- [ ] Change template engine to Jinja.
+- [ ] Add custom page titles.
