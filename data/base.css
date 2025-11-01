@@ -39,6 +39,10 @@ table {
 	background-color: Black;
 }
 
+.backgroundless {
+	background-color: unset;
+}
+
 .header-deco {
 	display: block; 
 	margin: 0 auto;
@@ -84,6 +88,12 @@ table {
 	background-color: rgba(0, 0, 0, .5);
 	flex-grow: 1;
 	padding: 24px;
+}
+.proj-desc-centered {
+	background-color: transparent;
+	flex-grow: 1;
+	padding: 24px;
+	text-align: center;
 }
 .proj-logo {
 	object-fit: contain;

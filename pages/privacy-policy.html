@@ -1,5 +1,11 @@
-<!-- TEMPLATE: base -->
-<!-- BACKGROUND: bg_pp.png -->
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy{% endblock %}
+{% block description %}Legal stuff, nobody really cares about this.{% endblock %}
+
+{% block background %}bg_pp.png{% endblock %}
+
+{% block content %}
 <h2>Privacy Policy</h2>
 <p>Last updated: September 2025</p>
 
@@ -27,3 +33,4 @@
 <p>If you have any questions about this privacy policy or anything related to our apps, feel free to contact me at:
 <a href="mailto:dev.lucas.angelo@gmail.com">dev.lucas.angelo@gmail.com</a>
 </p>
+{% endblock %}

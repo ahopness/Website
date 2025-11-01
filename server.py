@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Development Server for Static Site Generator.
 Serves the built site content on localhost:1313 with hot reloading.

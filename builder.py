@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-
 """
 Static Site Generator Builder.
-Processes HTML pages with templates and copies data files to the build directory.
-Doesn't require any external packages.
+Processes HTML pages with Jinja2 templates and copies data files to the build directory.
 """
 
 import shutil
-import re
 from pathlib import Path
+from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
 class StaticSiteBuilder:
     def __init__(self, root_dir="."):
@@ -17,6 +14,13 @@ class StaticSiteBuilder:
         self.pages_dir = self.root_dir / "pages"
         self.templates_dir = self.root_dir / "templates"
         self.build_dir = self.root_dir / "build"
+        
+        self.jinja_env = Environment(
+            loader=FileSystemLoader([str(self.templates_dir), str(self.pages_dir)]),
+            autoescape=True,
+            trim_blocks=True,
+            lstrip_blocks=True
+        )
     
     def clean_build_dir(self):
         if self.build_dir.exists():
@@ -46,56 +50,12 @@ class StaticSiteBuilder:
                 shutil.copy2(item, dest_path)
                 print(f"Copied data file: {rel_path}")
     
-    def extract_template_tag(self, content):
-        match = re.match(r'^\s*<!--\s*TEMPLATE:\s*(\w+)\s*-->\s*\n?', content)
-        if match:
-            template_name = match.group(1)
-            content_without_tag = re.sub(r'^\s*<!--\s*TEMPLATE:\s*\w+\s*-->\s*\n?', '', content)
-            return template_name, content_without_tag
-        return None, content
-    
-    def extract_background_tag(self, content):
-        match = re.match(r'^\s*<!--\s*BACKGROUND:\s*([\w.-]+)\s*-->\s*\n?', content)
-        if match:
-            template_name = match.group(1)
-            content_without_tag = re.sub(r'^\s*<!--\s*BACKGROUND:\s*[\w.-]+\s*-->\s*\n?', '', content)
-            return template_name, content_without_tag
-        return None, content
-    
-    def load_template(self, template_name):
-        template_path = self.templates_dir / f"{template_name}.html"
-        if not template_path.exists():
-            raise FileNotFoundError(f"Template not found: {template_path}")
-        
-        with open(template_path, 'r', encoding='utf-8') as f:
-            return f.read()
-    
     def process_page(self, page_path):
         page_name = page_path.stem
         
-        with open(page_path, 'r', encoding='utf-8') as f:
-            page_content = f.read()
-        
-        template_name, clean_content = self.extract_template_tag(page_content)
-        backrgound_filename, clean_content = self.extract_background_tag(clean_content)
-        
-        if not template_name:
-            print(f"No TEMPLATE tag found in {page_path.name}, skipping...")
-            return
-        if not backrgound_filename:
-            print(f"No BACKGROUND tag found in {page_path.name}, skipping...")
-            return
-        
         try:
-            template_content = self.load_template(template_name)
-            
-            pretty_page_name = page_name.replace('-', ' ').capitalize()
-            if pretty_page_name == 'Index': pretty_page_name = "Home"
-            final_content = template_content.replace('<!-- TITLE -->', pretty_page_name)
-
-            final_content = final_content.replace('<!-- BACKGROUND -->', backrgound_filename)
-
-            final_content = final_content.replace('<!-- CONTENT -->', clean_content)
+            template = self.jinja_env.get_template(page_path.name)
+            final_content = template.render()
             
             if page_name.lower() == 'index':
                 # Index page goes to build root
@@ -109,8 +69,9 @@ class StaticSiteBuilder:
                 f.write(final_content)
             
             print(f"Built page: {page_name} -> {output_path.relative_to(self.build_dir)}")
-            
-        except FileNotFoundError as e:
+        except TemplateNotFound as e:
+            print(f"Error processing {page_path.name}: Template not found - {e}")
+        except Exception as e:
             print(f"Error processing {page_path.name}: {e}")
     
     def build_pages(self):
@@ -128,10 +89,6 @@ class StaticSiteBuilder:
     
     def build(self):
         print("Starting static site build...")
-        
-        if not self.templates_dir.exists():
-            print("Templates directory not found! Please create the 'templates' folder.")
-            return False
         
         try:
             self.clean_build_dir()

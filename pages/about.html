@@ -1,5 +1,11 @@
-<!-- TEMPLATE: base -->
-<!-- BACKGROUND: bg_about.png -->
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+{% block description %}About My Vessel.{% endblock %}
+
+{% block background %}bg_about.png{% endblock %}
+
+{% block content %}
 <h2>About My Vessel</h2>
 <p>Last updated: September 2025</p>
 
@@ -18,3 +24,4 @@
 <br>
 <p><a href="https://github.com/ahopness">(even more about me)</a></p>
 <p><a href="/links/">(other places to find me over the WWW)</a></p>
+{% endblock %}

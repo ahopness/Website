@@ -23,7 +23,7 @@ project/
 
 ## To Do
 
-- [ ] Change template engine to Jinja.
-- [ ] Add custom page titles.
-- [ ] Add UV package manager.
+- [x] Add UV package manager.
+- [x] Change template engine to Jinja.
+- [ ] Update `index.html`.
 

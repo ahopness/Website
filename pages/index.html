@@ -1,23 +1,68 @@
-<!-- TEMPLATE: card -->
-<!-- BACKGROUND: bg_main.png -->
-<div style="display: flex; flex-direction: row;">
-    <div class="hide-on-mobile">
-        <img src="/avatar.jpg" height="128px" style="padding: 8px;">
-    </div>
-    <div style="flex-grow: 2;">
-        <h2><a href="/">Lucas Ângelo // lucasangelo.dev</a></h2>
-        <h3>art nerd. software wizard. writing enjoyer.</h3>
-        <p style="text-align: end;">personal website. work catalogue.</p>
-        <p><a href="/about/">/ About</a></p>
-        <p><a href="/links/">/ Links</a></p>
-        <p>/ Projects</p>
-        <p><a href="https://kognum.com">/ / KOGNUM</a></p>
-        <p><a href="/cgc-1/">/ / Lucas' Computer Game Collection. Vol 1.</a></p>
-        <p><a href="/old-trash/">/ / Old <s>Projects</s> Trash</a></p>
-        <p style="text-align: end;">
-            <a href="https://github.com/ahopness/website">(Fork this website)</a>
-            <a href="mailto:dev.lucas.angelo@gmail.com" style="padding: 0 8px;">(Get in touch)</a>
-            <a href="/privacy-policy/">(Privacy Policy)</a>
-        </p>
+{% extends "footerless.html" %}
+
+{% block title %}Home{% endblock %}
+{% block description %}Art nerd. Software wizard. Writing enjoyer. Personal site. Work catalogue.{% endblock %}
+
+{% block background %}bg_main.png{% endblock %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    <img src="/avatar.jpg" height="128px" style="padding: 8px;">
+    <h2><a href="/">Lucas Ângelo // lucasangelo.dev</a></h2>
+    <br>
+    <h3>art nerd. software wizard. writing enjoyer.</h3>
+    <p>personal website. work catalogue.</p>
+</div>
+
+<br><br>
+
+<div class="proj" style="background-image: url('/bg_about.png');">
+    <div class="proj-desc-centered">
+        <h2><a href="/about/">About</a></h2>
     </div>
 </div>
+
+<br>
+
+<div class="proj" style="background-image: url('/bg_links.png');">
+    <div class="proj-desc-centered">
+        <h2><a href="/links/">Links</a></h2>
+    </div>
+</div>
+
+<br>
+
+<p>// Projects</p>
+
+<div class="proj" style="background-image: url('/kognum.png');">
+    <div class="proj-desc-centered">
+        <h2><a href="https://kognum.com">KOGNUM</a></h2>
+    </div>
+</div>
+
+<br>
+
+<div class="proj" style="background-image: url('/bg_cgc_b.png');">
+    <div class="proj-desc-centered">
+        <h2><a href="/cgc-1/">Lucas' Computer Game Collection. Vol 1.</a></h2>
+    </div>
+</div>
+
+<br>
+
+<div class="proj" style="background-image: url('/bg_trash.png');">
+    <div class="proj-desc-centered">
+        <h2><a href="/old-trash/">Old Trash</a></h2>
+    </div>
+</div>
+
+<br>
+
+<div style="text-align: center; margin: 24px 0">
+    <a href="https://github.com/ahopness/website">(Fork this website)</a>
+    <a href="mailto:dev.lucas.angelo@gmail.com" style="padding: 0 8px;">(Get in touch)</a>
+    <a href="/privacy-policy/">(Privacy Policy)</a>
+    <p>&copy; 2025 Lucas Ângelo. All rights reserved. (jk)</p>
+</div>
+{% endblock %}

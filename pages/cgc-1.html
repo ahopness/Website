@@ -1,6 +1,11 @@
-<!-- TEMPLATE: base -->
-<!-- BACKGROUND: bg_cgc_b.png -->
+{% extends "base.html" %}
 
+{% block title %}The C.G.C. 1{% endblock %}
+{% block description %}Tales from the "Lucas' Computer Game Collection. Vol 1."{% endblock %}
+
+{% block background %}bg_cgc_b.png{% endblock %}
+
+{% block content %}
 <img src="/cgc-1.png" class="header-deco" style="max-height: 200px; padding: 24px;">
 
 <p style="text-align: center;">Imagine you're burried alive, what things would be floating around in your head while you are waiting for your demise?</p>
@@ -75,8 +80,19 @@
 
 <div class="proj-alt" style="background-image: url('/bg_cgc_a.png'); background-repeat: repeat;">
     <div class="proj-desc-alt">
-        <h2>nDV: NeuroDive</h2>
+        <h2>NeuroDIVE</h2>
         <p><i>"The natural order of everything is chaos."</i></p>
         <p>Next up. Coming soon.</p>
     </div>
 </div>
+
+<br>
+
+<div class="proj" style="background-image: url('/project_gift_alt_1.jpg'); background-size: 100vw auto;">
+    <div class="proj-desc-centered">
+        <h2>While you wait for the NeuroDIVE...</h2>
+        <p><a href="https://play.google.com/store/apps/details?id=com.ahopness.gift">Play <b>GIFT</b></a></p>
+        
+    </div>
+</div>
+{% endblock %}

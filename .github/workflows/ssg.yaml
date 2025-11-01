@@ -1,5 +1,6 @@
 name: Deploy site to Pages
 # Adapted from Hugo's github pages deploy worflow
+# UPDATE 01/11/25: Deploy workdlow now supports the UV Package Manager
 
 on:
   push:
@@ -38,15 +39,15 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.x' 
+          enable-cache: true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with python
-        run: python3 builder.py
+        run: uv run builder.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
