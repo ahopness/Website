@@ -20,10 +20,3 @@ project/
 
 - Python 3.6 or higher
   - `pip install watchdog` to run server.py.
-
-## To Do
-
-- [x] Add UV package manager.
-- [x] Change template engine to Jinja.
-- [ ] Update `index.html`.
-
