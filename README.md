@@ -8,15 +8,10 @@
 
 ```
 project/
-├── data/           # CSS, images, and other assets
-├── pages/          # HTML pages with TEMPLATE tags
-├── templates/      # HTML templates with CONTENT placeholders
-├── builder.py      # Static site generator
-├── server.py       # Development server w/ hot reloading
-└── build/          # Generated output (created by builder.py)
+├── data/           # CSS, images, and other assets, static content
+├── pages/          # HTML Jinja pages
+├── templates/      # HTML Jinja templates used by pages
+├── builder.py      # Static site generator powered by Jinja2
+├── server.py       # Development server w/ hot reloading powered by Watchdog
+└── build/          # Generated output created by builder.py
 ```
-
-## Requirements
-
-- Python 3.6 or higher
-  - `pip install watchdog` to run server.py.
