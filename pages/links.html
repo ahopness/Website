@@ -1,33 +1,49 @@
-{% extends "base.html" %}
+{% extends "standard.html" %}
 
 {% block title %}Links{% endblock %}
 {% block description %}(Hyper)Links of digital manifestations.{% endblock %}
 
-{% block background %}bg_links.png{% endblock %}
+{% block background %}dirt.png{% endblock %}
 
 {% block content %}
-<h2>(Hyper)Links</h2>
-<p>Last updated: September 2025</p>
+<div class="grid-cell-centered">
+    <img src="https://blob.gifcities.org/gifcities/OPTQLSIGJ2MMSNWYXP6MEZQBMVVETSM4.gif" style="width: 42px;">
+</div>
+<div class="grid-cell-1x3">
+    <h2>(Hyper)Links.</h2>
+    <p>Last updated: June 2026</p>
+</div>
 
-<img src="https://blob.gifcities.org/gifcities/E3BY3HMQGMXRA4UVU3UIQURBBAMGM4MB.gif" class="header-deco" style="height: 14px;">
-
-<ul>
-    <p><b>Contact</b></p>
-    <li>E-Mail: <a href="mailto:dev.lucas.angelo@gmail.com">dev.lucas.angelo@gmail.com</a></li>
-    <p><b>Socials</b></p>
-    <li><a href="https://bsky.app/profile/lucasangelo.dev">BlueSky</a> (where i post project updates)</li>
-    <li><a href="https://github.com/ahopness">Github</a> (where most of my code is)</li>
-    <p><b>Projects</b></p>
-    <li><a href="https://kognum.com">KOGNUM</a> (<i>Art House</i> by me and some friends)</li>
-    <p><b>Project Storefronts</b></p>
-    <li><a href="https://play.google.com/store/apps/dev?id=8108128084347436789">Google Playstore</a> (for my android apps & games)</li>
-    <li><a href="https://ahopness.itch.io">itch.io</a> (for desktop and mobile games)</li>
-    <p><b>Other Socials</b></p>
-    <li><a href="https://www.reddit.com/u/ahopness/">Reddit</a> (i hang out here sometimes)</li>
-    <li><a href="https://www.youtube.com/@ahopness">Youtube</a> (some trailers and project updates)</li>
-    <li><a href="https://x.com/ahopness">X/Twitter</a> (dead account, moved to bsky)</li>
-</ul>
-
-<br>
-<p><a href="/about/">(more information about this vessel)</a></p>
+<a href="mailto:dev.lucas.angelo@gmail.com" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/email.png');">
+    <h2>E-Mail</h2>
+    <p>Get in Touch!</p>
+</a>
+<a href="https://bsky.app/profile/lucasangelo.dev" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/bluesky.png');">
+    <h2>Bluesky</h2>
+    <p>Where i post project updates.</p>
+</a>
+<a href="https://github.com/ahopness" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/github.png');">
+    <h2>Github</h2>
+    <p>Where most of my code is.</p>
+</a>
+<a href="https://www.youtube.com/@ahopness" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/youtube.png');">
+    <h2>Youtube</h2>
+    <p>Where i post trailers and project updates.</p>
+</a>
+<a href="https://play.google.com/store/apps/dev?id=8108128084347436789" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/playstore.png');">
+    <h2>Google Playstore</h2>
+    <p>For my android apps & games.</p>
+</a>
+<a href="https://ahopness.itch.io" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/itchio.png');">
+    <h2>Itch.io</h2>
+    <p>For my desktop & mobile games.</p>
+<a href="https://www.reddit.com/u/ahopness/" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/reddit.png');">
+    <h2>Reddit</h2>
+    <p>Where i hang out sometimes.</p>
+</a>
+<a href="https://x.com/ahopness" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/twitter.png');">
+    <h2>X/Twitter</h2>
+    <p>Dead account, moved to bsky.</p>
+</a>
+</a>
 {% endblock %}

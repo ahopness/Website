@@ -1,68 +1,48 @@
-{% extends "footerless.html" %}
+{% extends "clean.html" %}
 
 {% block title %}Home{% endblock %}
 {% block description %}Art nerd. Software wizard. Writing enjoyer. Personal site. Work catalogue.{% endblock %}
 
-{% block background %}bg_main.png{% endblock %}
+{% block background %}wood.png{% endblock %}
 
 {% block content %}
 
-<div style="text-align: center;">
-    <img src="/avatar.jpg" height="128px" style="padding: 8px;">
-    <h2><a href="/">Lucas Ângelo // lucasangelo.dev</a></h2>
-    <br>
-    <h3>art nerd. software wizard. writing enjoyer.</h3>
-    <p>personal website. work catalogue.</p>
+<div style="padding: 0; background-image: url('/index/avatar.jpg'); background-size: cover;">
+</div>
+<div>
+    <h2>Welcome to <a href="/">lucasangelo.dev</a></h2>
+</div>
+<a href="/about/" style="background-image: url('/backgrounds/dust.png');">
+    <h2>About</h2>
+</a>
+<a href="/links/" style="background-image: url('/backgrounds/dirt.png');">
+    <h2>Links</h2>
+</a>
+
+<div class="grid-cell-1x4 grid-cell-centered">
+    <h2>Projects</h2>
 </div>
 
-<br><br>
+<a href="/cgc-1/" class="grid-cell-1x2 grid-cell-draker-bg" style="background-image: url('/backgrounds/marble.png');">
+    <h2>Lucas' Computer Game Collection Vol. 1</h2>
+</a>
+<a href="/gift/" class="grid-cell-1x2" style="background-image: url('/backgrounds/concrete.png');">
+    <h2>GIFT: post mortem inquest</h2>
+</a>
+<a href="https://kognum.com" class="grid-cell-1x2" style="background-image: url('/backgrounds/stone.png');">
+    <h2>KOGNUM</h2>
+</a>
+<a href="/old-trash/" class="grid-cell-1x2" style="background-image: url('/backgrounds/tarp.png');">
+    <h2>Old Trash</h2>
+</a>
 
-<div class="proj" style="background-image: url('/bg_about.png');">
-    <div class="proj-desc-centered">
-        <h2><a href="/about/">About</a></h2>
-    </div>
-</div>
-
-<br>
-
-<div class="proj" style="background-image: url('/bg_links.png');">
-    <div class="proj-desc-centered">
-        <h2><a href="/links/">Links</a></h2>
-    </div>
-</div>
-
-<br>
-
-<p>// Projects</p>
-
-<div class="proj" style="background-image: url('/kognum.png');">
-    <div class="proj-desc-centered">
-        <h2><a href="https://kognum.com">KOGNUM</a></h2>
-    </div>
-</div>
-
-<br>
-
-<div class="proj" style="background-image: url('/bg_cgc_b.png');">
-    <div class="proj-desc-centered">
-        <h2><a href="/cgc-1/">Lucas' Computer Game Collection. Vol 1.</a></h2>
-    </div>
-</div>
-
-<br>
-
-<div class="proj" style="background-image: url('/bg_trash.png');">
-    <div class="proj-desc-centered">
-        <h2><a href="/old-trash/">Old Trash</a></h2>
-    </div>
-</div>
-
-<br>
-
-<div style="text-align: center; margin: 24px 0">
-    <a href="https://github.com/ahopness/website">(Fork this website)</a>
-    <a href="mailto:dev.lucas.angelo@gmail.com" style="padding: 0 8px;">(Get in touch)</a>
-    <a href="/privacy-policy/">(Privacy Policy)</a>
+<div class="grid-cell-1x4 grid-cell-centered">
+    <p>
+        <a href="https://github.com/ahopness/website">[Fork this website]</a>
+        <a href="mailto:dev.lucas.angelo@gmail.com" style="padding: 0 8px;">[Get in touch]</a>
+        <a href="/privacy-policy/">[Privacy Policy]</a>
+    </p>
     <p>&copy; 2025 Lucas Ângelo. All rights reserved. (jk)</p>
 </div>
+
 {% endblock %}

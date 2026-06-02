@@ -1,0 +1,71 @@
+{% extends "project.html" %}
+
+{% block title %}GIFT: post mortem inquest{% endblock %}
+{% block description %}Tales from beyond the grave{% endblock %}
+
+{% block background %}{% endblock %}
+
+{% block content %}
+<div id="top" class="grid-cell-1x4 grid-cell-centered" style="height: 100vh;">
+    <img src="/gift/header.jpg" style="width: min(90vw, 512px); height: auto;">
+</div>
+
+<div class="grid-cell-1x2">
+    <p>GIFT is about death and rebirth. Explore these liminal monochromatic fragments of memories, breath in that doubts that create fear, search it, find memories, find yourself. It's in our hands, everything is.</p>
+</div>
+<div class="grid-cell-1x2">
+    <p><b>WARNING</b>: This game is a walking sim, don't go in expecting anything else.</p>
+</div>
+
+<div class="grid-cell-1x4 grid-cell-centered">
+    <div style="width: min(90vw, 560px); aspect-ratio: 16 / 9;">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/L852aqCsuwg"
+            title="Lucas' Computer Game Collection Vol.1 - Announcement Trailer"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="width: 100%; height: 100%">
+        </iframe>
+    </div>
+</div>
+
+<!--
+<div class="grid-cell-1x4 grid-cell-centered" style="flex-direction: column; gap: var(--default-spacing);">
+    <div>
+        <a href="https://play.google.com/store/apps/details?id=com.ahopness.gift"><img src="/misc/playstore_badge.svg" style="width: 128px;"></a>
+        <p>Android</p>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: var(--default-spacing);">
+        <div>
+            <a href="https://ahopness.itch.io/gift"><img src="/misc/itchio_badge.svg" style="width: 128px;"></a>
+            <p>HTML5</p>
+        </div>
+        <div>
+            <a href="https://ahopness.itch.io/cgc-1"><img src="/misc/itchio_badge_alt.svg" style="width: 128px;"></a>
+            <p>Windows & Linux</p>
+        </div>
+    </div>
+</div>
+-->
+<div class="grid-cell-1x4 grid-cell-centered" style="flex-direction: row; gap: var(--default-spacing);">
+    <div>
+        <a href="https://play.google.com/store/apps/details?id=com.ahopness.gift"><img src="/misc/playstore_badge.svg" style="width: 128px;"></a>
+        <p>Android</p>
+    </div>
+    <div>
+        <a href="https://ahopness.itch.io/gift"><img src="/misc/itchio_badge.svg" style="width: 128px;"></a>
+        <p>HTML5</p>
+    </div>
+</div>
+
+<div class="screenshot-reel grid-cell-1x4">
+    <img src="/gift/screenshots/1.jpg">
+    <img src="/gift/screenshots/2.jpg">
+    <img src="/gift/screenshots/3.jpg">
+    <img src="/gift/screenshots/4.jpg">
+    <img src="/gift/screenshots/5.jpg">
+</div>
+{% endblock %}

@@ -1,27 +1,36 @@
-{% extends "base.html" %}
+{% extends "standard.html" %}
 
 {% block title %}About{% endblock %}
-{% block description %}About My Vessel.{% endblock %}
+{% block description %}About This Vessel.{% endblock %}
 
-{% block background %}bg_about.png{% endblock %}
+{% block background %}dust.png{% endblock %}
 
 {% block content %}
-<h2>About My Vessel</h2>
-<p>Last updated: September 2025</p>
+<div class="grid-cell-centered">
+    <img src="https://blob.gifcities.org/gifcities/AU5NQ2WD7GPKTX5AN3L5LULQ35LZMWTP.gif" style="height: 32px;">
+</div>
+<div class="grid-cell-1x3">
+    <h2>About This Vessel.</h2>
+    <p>Last updated: June 2026</p>
+</div>
 
-<!-- <img src="https://blob.gifcities.org/gifcities/FT2JAPDEH2OMGGOYWZBUKAOUMQBSEBEZ.gif" class="header-deco" style="height: 24px;"> -->
-<img src="https://blob.gifcities.org/gifcities/AU5NQ2WD7GPKTX5AN3L5LULQ35LZMWTP.gif" class="header-deco" style="height: 32px;">
+<div class="grid-cell-1x4">
+    <p>Thanks for stopping by!</p>
+    <br>
+    <p>I am <b>Lucas Ângelo</b> - but i also go by the handle <i>ahopness</i> online - a computer engeneering student at the <a href="https://www.uerj.br">Rio de Janeiro State University (UERJ)</a>. Ever since i was a kid i liked to use computers and code as means to express myself, <i>bounded by 0s and 1s the problems that life gives us seem simpler to solve</i>.</p>
+    <br>
+    <p>My interests range from mobile and backend to vfx and gameplay programming. I've been developing and publishing apps to mobile and desktop using various tech stacks since i was a kid, from game development with Unity, Monogame, but mainly Godot to Jetpack Compose, Flutter and Flask.</p>
+    <br>
+    <p>I also enjoy making art on my free time, inspired by existentialist literature and experimental films and games, most of my works have this dreamy/personal/sensorial feel to them. At the moment I'm focussed on finishing some personal game dev projects of mine, you can hear more about it <a href="/cgc-1/">here</a>.</p>
+    <p>You might also know me from the <a href="https://github.com/ahopness/GodotRetro">Godot Retro</a> shader pack i made for the Godot game engine, it currently has 500+ stars on github and is frequently used by it's community to assist the making of retro/lo-fi style games in the engine.</p>
+</div>
 
-<p>Thanks for stopping by!</p>
-<p>I am <b>Lucas Ângelo</b> - but i also go by the handle <i>ahopness</i> online - a computer engeneering student at the <a href="https://www.uerj.br">Rio de Janeiro State University (UERJ)</a>. Ever since i was a kid i liked to use computers and code as means to express myself, <i>bounded by 0s and 1s the problems that life gives us seem simpler to solve</i>.</p>
-<br>
-<p>My interests range from graphics and gameplay to mobile and backend programming. I have experiences developing and publishing applications to mobile and desktop via digital storefronts using various tech stacks, from <b>game development</b> ones (like Unity, Monogame, but mainly Godot) to <b>Jetpack Compose</b>, <b>Flutter</b> and <b>Flask</b>.</p>
-<br>
-<p>I also enjoy making art on my free time, inspired by existentialist literature and experimental films and games, most of my works have this dream'y/personal/sensorial feel to them. At the moment I'm focussed on finishing some personal game dev projects of mine, you can hear more about it <a href="/cgc-1/">here</a>.</p>
-<p>You might also know me from the <a href="https://github.com/ahopness/GodotRetro">Godot Retro</a> shader pack i made for the Godot game engine, it currently has 500+ stars on github and is frequently used by it's community to assist the making of retro/lo-fi style games in the engine.</p>
-<br>
-<p>If you would like to contact me, feel free to do so via <a href="mailto:dev.lucas.angelo@gmail.com">dev.lucas.angelo@gmail.com</a>.</p>
-<br>
-<p><a href="https://github.com/ahopness">(even more about me)</a></p>
-<p><a href="/links/">(other places to find me over the WWW)</a></p>
+<a href="mailto:dev.lucas.angelo@gmail.com" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/links/email.png');">
+    <h2>E-Mail</h2>
+    <p>Get in Touch!</p>
+</a>
+<a href="/links/" class="grid-cell-1x2-const grid-cell-draker-bg" style="background-image: url('/backgrounds/dirt.png');">
+    <h2>Links</h2>
+    <p>Manifestations in the World Wide Web.</p>
+</a>
 {% endblock %}

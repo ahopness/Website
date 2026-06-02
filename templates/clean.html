@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		
+		{% set page_title %}{% block title %}{% endblock %}{% endset %}
+		{% set page_description %}{% block description %}{% endblock %}{% endset %}
+		
+		<title>Lucas Ângelo // {{ page_title }}</title>
+		<meta property="og:title" content="Lucas Ângelo // {{ page_title }}">
+		<meta name="twitter:title" content="Lucas Ângelo // {{ page_title }}">
+				
+		<meta name="description" content="{{ page_description }}" />
+		<meta property="og:description" content="{{ page_description }}">
+		<meta name="twitter:description" content="{{ page_description }}">
+			
+		<link rel="icon" href="/favicon.png" sizes="any">
+		<meta property="og:image" content="/favicon.png" />
+		<meta name="twitter:image" content="/favicon.png"> 
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="index" />
+		
+		<meta name="darkreader-lock">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		
+		<link rel="stylesheet" href="/base.css">
+		<style>
+		@media screen and (min-width: 900px) {
+			body {
+				background-image: url("/backgrounds/{% block background %}{% endblock %}");
+			}
+		}
+		</style>
+	</head>
+	<body>
+		<main class="clean-main grid">
+			{% block content %}{% endblock %}
+		</main>
+  	</body>
+</html>

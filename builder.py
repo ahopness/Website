@@ -24,7 +24,7 @@ class StaticSiteBuilder:
     
     def clean_build_dir(self):
         if self.build_dir.exists():
-            # Remove contents instead of the entire directory to avoid breaking the server
+            # NOTE: remove contents instead of the entire directory to avoid breaking the server
             for item in self.build_dir.iterdir():
                 if item.is_dir():
                     shutil.rmtree(item)
@@ -39,14 +39,17 @@ class StaticSiteBuilder:
         if not self.data_dir.exists():
             print("No data directory found, skipping data files...")
             return
-        
+
         for item in self.data_dir.rglob("*"):
+            rel_path = item.relative_to(self.data_dir)
+            dest_path = self.build_dir / rel_path
+
+            if item.is_dir():
+                dest_path.mkdir(parents=True, exist_ok=True)
+                continue
+
             if item.is_file():
-                rel_path = item.relative_to(self.data_dir)
-                dest_path = self.build_dir / rel_path
-                
                 dest_path.parent.mkdir(parents=True, exist_ok=True)
-                
                 shutil.copy2(item, dest_path)
                 print(f"Copied data file: {rel_path}")
     
@@ -57,8 +60,8 @@ class StaticSiteBuilder:
             template = self.jinja_env.get_template(page_path.name)
             final_content = template.render()
             
+            # NOTE: index page goes to build root
             if page_name.lower() == 'index':
-                # Index page goes to build root
                 output_path = self.build_dir / "index.html"
             else:
                 page_folder = self.build_dir / page_name
