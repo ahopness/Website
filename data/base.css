@@ -138,12 +138,16 @@ header, footer, main, .clean-main {
 
 /* ---------------------------------- */
 
-.screenshot-reel {
+.screenshot-reel, .screenshot-reel-big {
 	display: flex;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 }
 .screenshot-reel img {
 	height: var(--grid-cell-size);
+	scroll-snap-align: center;
+}
+.screenshot-reel-big img {
+	height: calc(var(--grid-cell-size) * 2);
 	scroll-snap-align: center;
 }
