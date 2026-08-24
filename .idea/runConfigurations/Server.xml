@@ -13,7 +13,7 @@
     <option name="uvArgs">
       <list />
     </option>
-    <option name="uvSdkKey" value="uv (Website)" />
+    <option name="uvSdkKey" value="~/Repositories/Website/.venv" />
     <method v="2" />
   </configuration>
 </component>
